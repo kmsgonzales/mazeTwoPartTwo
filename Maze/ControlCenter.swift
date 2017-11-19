@@ -12,6 +12,14 @@ class ControlCenter {
     var mazeController: MazeController!
 
     func moveComplexRobot(_ myRobot: ComplexRobotObject) {
+        let robotIsBlocked = isFacingWall(myRobot, direction: myRobot.direction)
+        
+        
+        if robotIsBlocked {
+            randomlyRotateRightOrLeft(myRobot)
+        } else {
+            continueStraightOrRotate(myRobot)
+        }
       
     // You may want to paste your Part 1 implementation of moveComplexRobot() here
         
